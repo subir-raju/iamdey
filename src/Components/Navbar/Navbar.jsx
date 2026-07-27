@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo2.svg";
@@ -6,10 +6,14 @@ import menu_open from "../../assets/menu_open.svg";
 import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
+  const [navbarOffset, setNavbarOffset] = useState(0);
   const menuRef = useRef();
+  const lastScrollY = useRef(0);
+  const currentOffset = useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const location = useLocation(); 
+  const navbarHeight = 90; // Approximate height of the navbar
 
   const openMenu = () => {
     if (menuRef.current) {
@@ -27,6 +31,25 @@ const Navbar = () => {
     document.body.classList.remove("no-scroll");
   };
 
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const deltaY = scrollY - lastScrollY.current;
+
+    // Calculate new offset
+    let newOffset = currentOffset.current - deltaY;
+
+    // Clamp between -navbarHeight and 0
+    if (newOffset > 0) newOffset = 0;
+    if (newOffset < -navbarHeight) newOffset = -navbarHeight;
+
+    // If we are at the very top, always show navbar
+    if (scrollY <= 0) newOffset = 0;
+
+    setNavbarOffset(newOffset);
+    currentOffset.current = newOffset;
+    lastScrollY.current = scrollY;
+  };
+
   const scrollToBottom = () => {
     closeMenu(); 
     window.scrollTo({
@@ -35,8 +58,23 @@ const Navbar = () => {
     });
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Reset navbar when changing pages
+  useEffect(() => {
+    setNavbarOffset(0);
+    currentOffset.current = 0;
+    lastScrollY.current = window.scrollY;
+  }, [location.pathname]);
+
   return (
-    <div className="navbar">
+    <div
+      className="navbar"
+      style={{ transform: `translateY(${navbarOffset}px)` }}
+    >
       <Link to="/">
         <img src={logo} alt="Logo" />
       </Link>
