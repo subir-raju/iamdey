@@ -64,7 +64,7 @@ const App = () => {
 
   return (
     <BrowserRouter basename="/iamdey/">
-      <div>
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <ScrollToTop />
         <div
           className={`cursor ${isHovering ? "cursor-hover" : ""}`}
@@ -75,32 +75,34 @@ const App = () => {
           style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }}
         ></div>
         <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <div className="reveal fade-bottom">
-                  <Hero />
-                </div>
-                <div className="reveal fade-left">
-                  <About />
-                </div>
-                <div className="reveal fade-right">
-                  <Project />
-                </div>
-                <div className="reveal fade-bottom">
-                  <Contact />
-                </div>
-              </>
-            }
-          />
-          <Route path="/education" element={<Education />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/blog" element={<Blogs />} />
-          <Route path="/details" element={<ProjectDetails />} />
-        </Routes>
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <div className="reveal fade-bottom">
+                    <Hero />
+                  </div>
+                  <div className="reveal fade-left">
+                    <About />
+                  </div>
+                  <div className="reveal fade-right">
+                    <Project />
+                  </div>
+                  <div className="reveal fade-bottom">
+                    <Contact />
+                  </div>
+                </>
+              }
+            />
+            <Route path="/education" element={<Education />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/blog" element={<Blogs />} />
+            <Route path="/details" element={<ProjectDetails />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>
