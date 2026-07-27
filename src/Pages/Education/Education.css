@@ -2,59 +2,67 @@
   margin: 40px;
   text-align: center;
   min-height: 100vh;
+  padding-top: 100px; /* Space for fixed navbar */
 }
 
 .education-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 30px;
+  gap: 50px;
 }
 
 .university-list {
   width: 25%;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  gap: 10px;
+  align-items: flex-end;
+  gap: 15px;
 }
 
 .university-list button {
   background-color: #212225;
   color: white;
   border: 1px dashed #fff;
-  padding: 20px 20px;
+  padding: 15px 20px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   transition: 0.3s;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .university-list button:hover {
   background-color: #dc3545;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .university-list button.selected {
   border: 2px solid #dc3545;
   color: white;
+  background-color: #1d1d22;
 }
 
 .education-details {
-  width: 70%;
+  width: 60%;
   text-align: left;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
-  background-color: #1d1d22;
+  background-color: #212225;
+  border: 1px solid #333;
 }
 
 .education-details h2 {
   font-size: 2em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  color: #ccd6f6;
 }
 
 .education-details p {
   font-size: 18px;
   line-height: 1.6;
+  margin-bottom: 15px;
+  color: #a8b2d1;
 }
 
 .education-details strong {
@@ -62,80 +70,34 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .education-content {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
   .university-list {
-    width: 100%;
+    width: 90%;
     align-items: center;
   }
 
-  .university-list button {
-    width: 100%;
-    font-size: 18px;
-    padding: 15px;
-  }
-
   .education-details {
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
+    width: 90%;
   }
 }
 
 @media (max-width: 768px) {
-.education-container {
-  margin-top: 200px;
-  text-align: center;
-  min-height: 100vh;
-}
-
-  .university-list button {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .education-details {
-    padding: 15px;
-  }
-
-  .education-details h2 {
-    font-size: 1.6em;
-  }
-
-  .education-details p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-.education-container {
-  margin-top: 200px;
-  text-align: center;
-  min-height: 100vh;
-}
-
-  .university-list {
-    width: 100%;
+  .education-container {
+    margin: 20px;
+    padding-top: 80px;
   }
 
   .university-list button {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .education-details {
-    padding: 10px;
+    font-size: 16px;
   }
 
   .education-details h2 {
-    font-size: 1.4em;
-  }
-
-  .education-details p {
-    font-size: 14px;
+    font-size: 1.5em;
   }
 }

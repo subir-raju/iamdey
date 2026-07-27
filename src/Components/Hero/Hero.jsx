@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import profile_img from "../../assets/propic.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import pdf from "../../assets/CV_SubirDeyRaju.pdf";
 
 const Hero = () => {
+  const [text, setText] = useState("");
+  const fullText = "Subir";
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setText((prev) => prev + fullText[index]);
+        setIndex((prev) => prev + 1);
+      }, 200);
+      return () => clearTimeout(timeout);
+    }
+  }, [index]);
+
   return (
     <div id="home" className="hero">
-      <img src={profile_img} alt=" " />
+      <img src={profile_img} alt=" " className="hero-profile-img" />
       <h1>
-        Hello, I'm<span> Subir</span>.
+        Hello, I'm<span> {text}</span>
       </h1>
       <p>
         A Master’s student in Data Science at Tampere University, who is

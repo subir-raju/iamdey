@@ -10,4 +10,96 @@ body{
     font-family: 'outfit';
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1);
+    filter: blur(5px);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.reveal.fade-bottom {
+    transform: translateY(100px);
+}
+
+.reveal.fade-bottom.active {
+    transform: translateY(0);
+}
+
+.reveal.fade-left {
+    transform: translateX(-150px);
+}
+
+.reveal.fade-left.active {
+    transform: translateX(0);
+}
+
+.reveal.fade-right {
+    transform: translateX(150px);
+}
+
+.reveal.fade-right.active {
+    transform: translateX(0);
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #dc3545;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
+    transform: translate(-50%, -50%);
+    display: none; /* Hidden by default, show on desktop */
+}
+
+.cursor-follower {
+    width: 8px;
+    height: 8px;
+    background: #dc3545;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.cursor-hover {
+    width: 50px;
+    height: 50px;
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+}
+
+.cursor-follower-hover {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.5;
+}
+
+@media (min-width: 1024px) {
+    .cursor, .cursor-follower {
+        display: block;
+    }
+
+    body {
+        cursor: none; /* Hide default cursor */
+    }
+}
+
+a, button, .clickable, .nav-connect, .about-showmore, .project-showmore {
+    cursor: none;
 }

@@ -12,7 +12,15 @@ const Project = () => {
       </div>
       <div className="project-container">
         {project_data.map((work, index) => {
-          return <img key={index} src={work.w_img} alt=" " />;
+          return (
+            <div key={index} className="project-item">
+              <img src={work.w_img} alt={work.w_name} />
+              <div className="project-overlay">
+                <h3>{work.w_name}</h3>
+                <Link to="/details" className="project-link">View Details</Link>
+              </div>
+            </div>
+          );
         })}
       </div>
       <Link to="/details" className="project-showmore-link">

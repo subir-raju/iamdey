@@ -1,6 +1,103 @@
-.experience {
-    display: flex;
-    align-items: center;
+.education-container {
+  margin: 40px;
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 100px; /* Space for fixed navbar */
+}
+
+.education-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 50px;
+}
+
+.university-list {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.university-list button {
+  background-color: #212225;
+  color: white;
+  border: 1px dashed #fff;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.university-list button:hover {
+  background-color: #dc3545;
+  transform: scale(1.02);
+}
+
+.university-list button.selected {
+  border: 2px solid #dc3545;
+  color: white;
+  background-color: #1d1d22;
+}
+
+.education-details {
+  width: 60%;
+  text-align: left;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #212225;
+  border: 1px solid #333;
+}
+
+.education-details h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #ccd6f6;
+}
+
+.education-details p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #a8b2d1;
+}
+
+.education-details strong {
+  color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .education-content {
     flex-direction: column;
-    margin: 3000px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .university-list {
+    width: 90%;
+    align-items: center;
+  }
+
+  .education-details {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-container {
+    margin: 20px;
+    padding-top: 80px;
+  }
+
+  .university-list button {
+    font-size: 16px;
+  }
+
+  .education-details h2 {
+    font-size: 1.5em;
+  }
 }
