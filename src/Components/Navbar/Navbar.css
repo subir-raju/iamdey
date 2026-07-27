@@ -1,20 +1,15 @@
-  .navbar {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 50px;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     background-color: #1d1d22;
-    transition: transform 0.3s ease;
     box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
-}
-
-.navbar.hide-navbar {
-  transform: translateY(-100%);
 }
 
 .navbar img{
@@ -90,7 +85,6 @@
     right: 0;
     z-index: 1000;
     background-color: #1d1d22;
-    transition: transform 0.3s ease;
     box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
 }
 .navbar img{

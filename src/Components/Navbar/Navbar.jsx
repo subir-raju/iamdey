@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo2.svg";
@@ -6,35 +6,25 @@ import menu_open from "../../assets/menu_open.svg";
 import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
-  const [hideNavbar, setHideNavbar] = useState(false);
   const menuRef = useRef();
-  const lastScrollY = useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const location = useLocation(); 
 
   const openMenu = () => {
-    menuRef.current.style.right = "0";
+    if (menuRef.current) {
+      menuRef.current.style.right = "0";
+    }
     setMenuOpen(true);
     document.body.classList.add("no-scroll");
   };
 
   const closeMenu = () => {
-    menuRef.current.style.right = "-350px";
+    if (menuRef.current) {
+      menuRef.current.style.right = "-350px";
+    }
     setMenuOpen(false);
     document.body.classList.remove("no-scroll");
-  };
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY < lastScrollY.current) {
-      setHideNavbar(false);
-    } else if (currentScrollY > lastScrollY.current) {
-      setHideNavbar(true);
-    }
-
-    lastScrollY.current = currentScrollY;
   };
 
   const scrollToBottom = () => {
@@ -45,13 +35,8 @@ const Navbar = () => {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className={`navbar ${hideNavbar ? "hide-navbar" : ""}`}>
+    <div className="navbar">
       <Link to="/">
         <img src={logo} alt="Logo" />
       </Link>
