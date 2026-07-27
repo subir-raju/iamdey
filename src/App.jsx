@@ -75,7 +75,7 @@ const App = () => {
           style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }}
         ></div>
         <Navbar />
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <Routes>
             <Route
               path="/"

@@ -11,13 +11,16 @@ const Hero = () => {
 
   useEffect(() => {
     if (index < fullText.length) {
+      // Add a longer delay for the first letter to wait for the reveal animation
+      const delay = index === 0 ? 800 : 200;
+
       const timeout = setTimeout(() => {
         setText((prev) => prev + fullText[index]);
         setIndex((prev) => prev + 1);
-      }, 200);
+      }, delay);
       return () => clearTimeout(timeout);
     }
-  }, [index]);
+  }, [index, fullText]);
 
   return (
     <div id="home" className="hero">
