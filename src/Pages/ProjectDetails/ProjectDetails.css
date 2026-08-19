@@ -1,78 +1,83 @@
 .project-details-page {
-  padding: 100px 20px 40px 20px;
+  padding: 120px 10% 80px 10%;
   background-color: #1d1d22;
   color: white;
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .project-details-title {
   text-align: center;
   margin-bottom: 50px;
-  font-size: 2.5em;
+  font-size: clamp(2rem, 6vw, 3rem);
   color: #fff;
 }
 
 .project-details-container {
   display: flex;
-  gap: 30px;
+  gap: 40px;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .project-list {
-  width: 20%;
+  flex: 0 0 250px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .project-list-item {
-  padding: 15px 20px;
-  background-color: #32323c;
-  border: 1px dashed white;
-  color: white;
+  padding: 12px 20px;
+  background-color: #212225;
+  border: 1px solid #333;
+  color: #a8b2d1;
   cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   text-align: left;
+  border-radius: 4px;
 }
 
 .project-list-item:hover {
-  background-color: #dc3545;
-  transform: scale(1.05);
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border-color: #dc3545;
 }
 
 .project-list-item.selected {
-  border: 2px solid #dc3545;
-  background-color: #1d1d22;
+  border-color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+  color: white;
 }
 
 .project-details {
-  width: 80%;
+  flex: 1;
   padding: 40px;
-  background-color: #32323c;
+  background-color: #212225;
   border-radius: 12px;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  position: relative;
+  min-width: 0; /* Important for flex child with overflow */
 }
 
 .project-details h2 {
-    margin-bottom: 40px;
-    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: #ccd6f6;
+    text-align: center;
 }
 
 /* Coverflow Carousel Styles */
 .coverflow-container {
   width: 100%;
-  height: 450px;
+  height: 400px;
   perspective: 1200px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -91,13 +96,12 @@
 
 .coverflow-item {
   position: absolute;
-  width: 60%;
+  width: 80%;
   max-width: 600px;
-  height: 350px;
+  aspect-ratio: 16 / 9;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  user-select: none;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
@@ -116,125 +120,107 @@
 }
 
 .coverflow-item.prev {
-  transform: translate3d(-40%, 0, 0) rotateY(45deg) scale(0.8);
+  transform: translate3d(-35%, 0, 0) rotateY(45deg) scale(0.8);
   z-index: 5;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .coverflow-item.next {
-  transform: translate3d(40%, 0, 0) rotateY(-45deg) scale(0.8);
+  transform: translate3d(35%, 0, 0) rotateY(-45deg) scale(0.8);
   z-index: 5;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .coverflow-item.inactive {
   transform: translate3d(0, 0, -200px) scale(0.5);
   z-index: 1;
   opacity: 0;
-  pointer-events: none;
 }
 
 .coverflow-controls {
-    position: absolute;
-    bottom: -20px;
+    margin-top: 20px;
     display: flex;
-    gap: 40px;
-    z-index: 20;
+    gap: 30px;
 }
 
 .slider-btn {
-    background: #1d1d22;
+    background: transparent;
     color: white;
     border: 1px solid #dc3545;
-    padding: 10px 25px;
-    font-size: 20px;
+    padding: 8px 20px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: 0.3s;
-    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .slider-btn:hover {
     background: #dc3545;
-    box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
 }
 
 .project-description {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: #a8b2d1;
   max-width: 900px;
-  margin-top: 20px;
   margin-bottom: 40px;
-  text-align: left;
+  text-align: justify;
 }
 
 .project-technologies {
   width: 100%;
-  border-top: 1px solid #444;
+  border-top: 1px solid #333;
   padding-top: 30px;
 }
 
 .project-technologies h3 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-align: center;
+  color: #ccd6f6;
 }
 
 .tech-icons {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .tech-icon {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   transition: 0.3s;
 }
 
-.tech-icon:hover {
-  transform: scale(1.2) translateY(-5px);
-}
-
 @media (max-width: 1024px) {
+  .project-details-page {
+    padding: 100px 5% 60px 5%;
+  }
   .project-details-container {
     flex-direction: column;
   }
-
   .project-list {
-    width: 100%;
     flex-direction: row;
+    flex: 0 0 auto;
     overflow-x: auto;
-    padding: 10px 0;
-  }
-
-  .project-details {
+    padding-bottom: 10px;
     width: 100%;
   }
-
-  .coverflow-item {
-    width: 80%;
+  .project-list-item {
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 768px) {
+    .project-details-page {
+        padding: 100px 20px 40px 20px;
+    }
+    .project-details {
+        padding: 20px;
+    }
     .coverflow-container {
-        height: 350px;
+        height: 300px;
     }
-
     .coverflow-item {
-        height: 250px;
-    }
-
-    .project-details h2 {
-        font-size: 1.8rem;
-    }
-
-    .coverflow-item.prev {
-        transform: translate3d(-30%, 0, 0) rotateY(35deg) scale(0.7);
-    }
-
-    .coverflow-item.next {
-        transform: translate3d(30%, 0, 0) rotateY(-35deg) scale(0.7);
+        width: 90%;
     }
 }

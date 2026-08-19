@@ -2,137 +2,116 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
+    padding: 0 10%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #1d1d22;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
-    transition: transform 0.1s linear; /* Fast, linear sync with scroll */
+    background-color: rgba(29, 29, 34, 0.95);
+    backdrop-filter: blur(10px);
+    height: 80px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s linear;
 }
 
-.navbar img{
-    height: 50px;
-    width: 90px;
+.navbar img {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
-.navbar img:hover{
-    height: 50px;
-    width: 90px;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
+
+.navbar img:hover {
+    transform: scale(1.1);
 }
-.nav-menu{
+
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 60px;
-    font-size: 20px;
+    gap: 40px;
 }
 
-.nav-menu li a{
-    padding: 10px;
-    background: #1d1d22;
-    font-size: 20px;
+.nav-menu li a {
+    font-size: 1.1rem;
     cursor: pointer;  
     text-decoration: none;  
-    color: #fff;
+    color: #ccd6f6;
+    transition: color 0.3s ease;
 }
 
 .nav-menu li a:hover {
-    padding: 10px 20px;
-    border: 1px solid #dc3545;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
+    color: #dc3545;
 }
 
-.nav-connect{
-    padding: 10px;
-    background: #1d1d22;
-    font-size: 20px;
+.nav-connect {
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #dc3545;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.5s;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, 0.15);
-    border: 1px solid #dc3545;
-    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+    color: white;
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+.nav-connect:hover {
+    background: #dc3545;
+    transform: translateY(-2px);
 }
 
-.nav-connect:hover{
-    transform: scale(1.05);
-    border: 1px solid #ffffff;
-    animation: none;
-}
-.nav-mob-open{
+.nav-mob-open, .nav-mob-close {
     display: none;
+    cursor: pointer;
 }
 
-.nav-mob-close{
-    display: none;
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 5%;
+    }
+    .nav-menu {
+        gap: 25px;
+    }
 }
-@media(max-width: 768px) {
-   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: #1d1d22;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
-    transition: transform 0.1s linear;
-}
-.navbar img{
-    height: 40px;
-    width: 70px;
-}
-    .nav-connect{
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .nav-connect {
         display: none;
     }
-    .nav-mob-open{
+
+    .nav-mob-open {
         display: block;
-        position: fixed;
-        right: 30px;
-    }
-    .nav-mob-close{
-        display: block;
-        position: relative;
-        top: 30px;
-        left: 290px;
         width: 30px;
     }
 
-    .no-scroll {
-        overflow: hidden;
-        height: 100vh; 
-    }
-
-    .nav-menu{
+    .nav-menu {
         position: fixed;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
+        justify-content: center;
         top: 0;
-        gap: 30px;
+        right: -100%;
         background-color: #1d1d22;
-        width: 350px;
-        height: 100%;
-        z-index: 2;
-        transition: right 0.5s;
-        right: -350px;
-        transition: transform 0.3s ease;
+        width: 100%;
+        height: 100vh;
+        z-index: 2000;
+        transition: right 0.5s ease;
+        gap: 40px;
     }
 
-    .nav-menu li{
-        font-size: 20px;
-        padding-left: 100px;
-        flex-direction: row;
-        gap: 20px;
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 25px;
+    }
+
+    .nav-menu li a {
+        font-size: 1.5rem;
     }
 }

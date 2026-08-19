@@ -29,17 +29,12 @@ const Hero = () => {
         Hello, I'm<span> {text}</span>
       </h1>
       <p>
-        A Master’s student in Data Science at Tampere University, who is
-        passionate about working with large-scale complex data, transforming
-        them into meaningful insights and intelligent solutions. My journey
-        spans from building full-stack applications and integrating AI-powered
-        chatbots to designing and applying machine learning models for anomaly
-        detection and reliable data-driven decision making. Along the way, I’ve
-        contributed to research on large-scale data pipelines, culminating in
-        peer-reviewed publications. I love working at the intersection of data,
-        software, and people, developing solutions that are smarter and capable
-        of shaping discussions, spurring creativity, and having an actual
-        impact.
+       I’m a Data and Software Engineer who enjoys turning complex data into variables people can actually understand, use, and act on. With a background that spans full-stack development, machine learning, AI, and data-intensive research, I like working where software meets intelligence and where technical ideas become real-world solutions.
+
+       My work has taken me from building applications and AI-powered systems to designing machine learning approaches for anomaly detection, large-scale data processing, and data-driven decision making. Along the way, I’ve also contributed to research and peer-reviewed publications, exploring how intelligent systems can uncover structure, insights, and meaning from complex data.
+
+       I am enthusiast in developing solutions that goes beyond simply working. I want it to make people think, create, decide, and discover something they couldn’t see before.
+
       </p>
       <div className="hero-action">
         <div className="hero-connect">

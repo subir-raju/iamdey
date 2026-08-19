@@ -36,13 +36,19 @@ const About = () => {
             <h1>Skills</h1>
             <div className="about-skills">
               {skillsData.map((skill, index) => (
-                <div key={index} className="about-skill">
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="skill-icon"
-                  />
-                  <p>{skill.name}</p>
+                <div
+                  key={index}
+                  className="about-skill"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="skill-icon-wrapper">
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="skill-icon"
+                    />
+                    <div className="skill-tooltip">{skill.name}</div>
+                  </div>
                 </div>
               ))}
             </div>

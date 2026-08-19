@@ -2,29 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
-}
-
-.about-title h1 {
-    padding: 0px 30px;
-    font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase;
+    padding: 80px 10%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .about-section {
-    display: flex;
-    gap: 80px;
     width: 100%;
-    justify-content: center;
 }
 
 .about-right {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     width: 100%;
 }
 
@@ -32,193 +23,144 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center; 
+    text-align: center;
 }
-.about-para h1{
-     color: #ccd6f6;
+
+.about-para h1 {
+    color: #ccd6f6;
+    font-size: clamp(2rem, 5vw, 2.5rem);
 }
-.about-skills-section h1{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 35px;
-    font-weight: 500;
+
+.about-para p {
+    font-size: 1.2rem;
+    color: #a8b2d1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-skills-section {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.about-skills-section h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center; 
     color: #ccd6f6;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .about-skills {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     width: 100%;
-    justify-items: center;
+    justify-content: center;
 }
 
 .about-skill {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    transition: 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.skill-icon-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
 .about-skill img {
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.about-skill p {
-    font-size: 18px;
-    font-weight: 500;
-    text-align: center;
-}
-
-.about-skill hr {
-    outline: none;
-    border: none;
-    width: 50%;
-    height: 8px;
-    border-radius: 50px;
-    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+.skill-tooltip {
+    position: absolute;
+    bottom: -35px;
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
 }
 
 .about-skill:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
+    animation-play-state: paused;
 }
 
-.about-showmore-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    width: 100%;
+.about-skill:hover img {
+    transform: scale(1.3) rotate(5deg);
+}
+
+.about-skill:hover .skill-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 .about-showmore {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
-    width: 180px;
-    border-radius: 0px;
-    padding: 10px;
-    font-size: 22px;
-    font-weight: 500;
-    transition: 0.6s;
-    cursor: pointer;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
-    justify-content: center; 
+    width: fit-content;
+    margin: 0 auto;
+    padding: 12px 25px;
+    border: 1px solid #dc3545;
+    font-size: 1.1rem;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .about-showmore:hover {
-    gap: 30px;
-    transition: 0.3s;
-    border: 2px solid #dc3545;
-    box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
+    background: #dc3545;
+    transform: translateY(-3px);
 }
 
+.about-showmore img {
+    width: 20px;
+    transition: transform 0.3s ease;
+}
 
-
-@media (max-width: 768px) {
-    .about {
-        gap: 60px;
-        margin: 50px 20px;
-    }
-
-    .about-title h1 {
-        font-size: 30px;
-        padding: 0;
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    .about-section {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-right {
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    .about-para {
-        font-size: 16px;
-        line-height: 28px;
-    }
-
-    .about-para h1 {
-        font-size: 25px;
-       
-    }
-
-    .about-skills {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-
-    .about-skill img {
-        height: 30px;
-        width: 30px;
-    }
-
-    .about-skill p {
-        font-size: 16px;
-        min-width: 120px;
-    }
-
-    .about-skill hr {
-        height: 6px;
-    }
-
-    .about-showmore {
-        width: 160px;
-        padding: 10px;
-        font-size: 18px;
-        margin: 30px auto;
-        cursor: pointer;
-        box-shadow: 0 .5rem 1rem rgba(220, 53, 69, .15);
-    }
+.about-showmore:hover img {
+    transform: translateX(5px);
 }
 
 @media (max-width: 1024px) {
     .about {
-        margin: 60px 50px;
-        gap: 70px;
+        padding: 60px 5%;
     }
+}
 
-    .about-title h1 {
-        font-size: 40px;
+@media (max-width: 768px) {
+    .about {
+        padding: 40px 20px;
     }
-
-    .about-section {
-        flex-direction: row;
-        gap: 40px;
+    .about-skills {
+        gap: 30px;
     }
-
-    .about-para {
-        font-size: 18px;
-    }
-
     .about-skill img {
-        height: 40px;
-        width: 40px;
-    }
-
-    .about-skill p {
-        font-size: 20px;
-    }
-
-    .about-skill hr {
-        height: 7px;
-    }
-
-    .about-showmore {
-        width: 180px;
-        font-size: 20px;
+        height: 50px;
+        width: 50px;
     }
 }

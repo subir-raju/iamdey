@@ -1,10 +1,23 @@
 import project1_img from "../assets/Airticket.png";
 import project2_img from "../assets/Docket.png";
 import project3_img from "../assets/InTrack.png";
-// Import new InTrack images (assuming these are the filenames)
+// Import new InTrack images
 import intrack1 from "../assets/InTrack1.png";
 import intrack2 from "../assets/InTrack2.png";
 import intrack3 from "../assets/InTrack3.png";
+
+// Import new Docket images (matches files in assets folder)
+import docket1 from "../assets/PPage1.png";
+import docket2 from "../assets/PPage2.png";
+import docket3 from "../assets/PPage3.png";
+import docket4 from "../assets/PPage4.png";
+import docket5 from "../assets/PPage5.png";
+import docket6 from "../assets/PPage6.png";
+import docket7 from "../assets/PPage7.png";
+import docket8 from "../assets/PPage8.png";
+import docket9 from "../assets/PPage9.png";
+import docket10 from "../assets/PPage10.png";
+import docket11 from "../assets/PPage11.png";
 
 const project_data1 = [
   {
@@ -41,7 +54,20 @@ const project_data1 = [
   },
   {
     title: "Docket",
-    images: [project2_img],
+    images: [
+      project2_img,
+      docket1,
+      docket2,
+      docket3,
+      docket4,
+      docket5,
+      docket6,
+      docket7,
+      docket8,
+      docket9,
+      docket10,
+      docket11,
+    ],
     description:
       " A website to keep track and sharing movies, tv-shows, anime, games books. As a part of CSE299 (Junior Design Project) course, developed a website through which user can login and then keep track of movies, tv-shows, anime, games, and books user has watched/played/read or is watching/ playing/ reading or is planning to watch/play/read and post blogs.",
     technologies: [

@@ -1,69 +1,75 @@
 .education-container {
-  margin: 40px;
+  padding: 120px 10% 80px 10%;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
-  padding-top: 100px; /* Space for fixed navbar */
-  padding-bottom: 50px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
+}
+
+.education-container h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 50px;
 }
 
 .education-content {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  gap: 50px;
+  gap: 40px;
+  width: 100%;
 }
 
 .university-list {
-  width: 25%;
+  flex: 0 0 250px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 15px;
+  gap: 12px;
 }
 
 .university-list button {
   background-color: #212225;
-  color: white;
-  border: 1px dashed #fff;
+  color: #a8b2d1;
+  border: 1px solid #333;
   padding: 15px 20px;
   cursor: pointer;
-  font-size: 18px;
-  transition: 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   width: 100%;
-  max-width: 300px;
+  text-align: left;
+  border-radius: 4px;
 }
 
 .university-list button:hover {
-  background-color: #dc3545;
-  transform: scale(1.02);
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border-color: #dc3545;
 }
 
 .university-list button.selected {
-  border: 2px solid #dc3545;
+  border-color: #dc3545;
   color: white;
-  background-color: #1d1d22;
+  background-color: rgba(220, 53, 69, 0.1);
 }
 
 .education-details {
-  width: 60%;
+  flex: 1;
   text-align: left;
-  padding: 30px;
-  border-radius: 8px;
+  padding: 40px;
+  border-radius: 12px;
   background-color: #212225;
   border: 1px solid #333;
+  min-width: 0;
 }
 
 .education-details h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   color: #ccd6f6;
 }
 
 .education-details p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
   margin-bottom: 15px;
   color: #a8b2d1;
 }
@@ -72,35 +78,41 @@
   color: #dc3545;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
+  .education-container {
+    padding: 100px 5% 60px 5%;
+  }
   .education-content {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
   }
 
   .university-list {
-    width: 90%;
-    align-items: center;
+    flex-direction: row;
+    flex: 0 0 auto;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .university-list button {
+    white-space: nowrap;
+    width: auto;
   }
 
   .education-details {
-    width: 90%;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .education-container {
-    margin: 20px;
-    padding-top: 80px;
+    padding: 100px 20px 40px 20px;
   }
-
-  .university-list button {
-    font-size: 16px;
+  .education-details {
+    padding: 20px;
   }
-
   .education-details h2 {
-    font-size: 1.5em;
+    font-size: 1.6rem;
   }
 }

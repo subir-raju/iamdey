@@ -79,7 +79,7 @@ const ProjectDetails = () => {
           <p className="project-description">{currentProject.description}</p>
 
           <div className="project-technologies">
-            <h3>Technologies Used:</h3>
+            <h3>Tech Stack</h3>
             <div className="tech-icons">
               {currentProject.technologies.map((tech, index) => (
                 <img

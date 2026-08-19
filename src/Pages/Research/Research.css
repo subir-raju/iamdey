@@ -1,103 +1,83 @@
 .research-page {
   background-color: #1d1d22;
-  color: #9EA3BA;
-  padding: 20px 20px 80px 20px;
-  margin-top: 0;
-  padding-top: 120px;
+  color: #a8b2d1;
+  padding: 120px 10% 80px 10%;
   flex: 1;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .research-page h1 {
   text-align: center; 
-  margin-bottom: 20px;
-  font-size: 2rem; 
-  color: #9EA3BA; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 50px; 
+  margin-bottom: 50px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: white;
 }
-
 
 .research-list {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
-  margin: 50px auto; 
-  max-width: 800px; 
-  width: 90%; 
+  gap: 20px;
+  width: 100%;
 }
 
 .research-item {
-  background-color: #1d1d22;
-  padding: 10px;
-  border: 1px dashed #dc3545;
+  background-color: #212225;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.research-item:hover {
+  border-color: #dc3545;
 }
 
 .research-title {
   cursor: pointer;
-  font-size: 1.2rem;
-  color: #9EA3BA;
-  padding: 10px;
+  font-size: 1.3rem;
+  color: #ccd6f6;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.research-title:hover {
+  color: #dc3545;
 }
 
 .research-title.active {
-  background-color: #561d11;
-  color: #9EA3BA;
+  color: #dc3545;
 }
 
 .research-details {
-  padding: 10px;
-  background-color: #444;
-  margin-top: 10px;
-  border-radius: 50px;
-  word-wrap: break-word; 
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  border-radius: 8px;
+  line-height: 1.7;
+  color: #a8b2d1;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1024px) {
+  .research-page {
+    padding: 100px 5% 60px 5%;
+  }
 }
 
 @media (max-width: 768px) {
   .research-page {
-    margin-top: 90px;
-    padding-bottom: 80px; 
+    padding: 100px 20px 40px 20px;
   }
-
-  .research-page h1{
-    color: red;
-  }
-
-  .research-list {
-    margin: 20px auto; 
-    width: 95%; 
-    gap: 15px; 
-  }
-
   .research-title {
-    font-size: 1rem; 
-    padding: 8px; 
+    font-size: 1.1rem;
   }
-
   .research-details {
-    font-size: 0.9rem; 
-    padding: 8px; 
-  }
-}
-
-@media (max-width: 480px) {
-  .research-page {
-    margin-top: 100px;
-    padding-bottom: 100px; 
-  }
-
-  .research-title {
-    font-size: 0.9rem; 
-    padding: 6px; 
-  }
-
-  .research-details {
-    font-size: 0.8rem; 
-    padding: 6px;
+    font-size: 1rem;
+    padding: 15px;
   }
 }

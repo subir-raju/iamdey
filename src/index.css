@@ -1,16 +1,23 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
     min-height: 100vh;
     background: #1d1d22;
     color: white;
-    font-family: 'outfit';
+    font-family: 'outfit', sans-serif;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Scroll Reveal Animation */
@@ -36,7 +43,7 @@ body{
 }
 
 .reveal.fade-left {
-    transform: translateX(-150px);
+    transform: translateX(-100px);
 }
 
 .reveal.fade-left.active {
@@ -44,7 +51,7 @@ body{
 }
 
 .reveal.fade-right {
-    transform: translateX(150px);
+    transform: translateX(100px);
 }
 
 .reveal.fade-right.active {
@@ -62,7 +69,7 @@ body{
     z-index: 9999;
     transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
     transform: translate(-50%, -50%);
-    display: none; /* Hidden by default, show on desktop */
+    display: none;
 }
 
 .cursor-follower {
@@ -95,11 +102,39 @@ body{
         display: block;
     }
 
-    body {
-        cursor: none; /* Hide default cursor */
+    a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+        cursor: none;
     }
 }
 
 a, button, .clickable, .nav-connect, .about-showmore, .project-showmore {
     cursor: none;
+}
+
+/* Utility for responsive container padding */
+.section-container {
+    padding: 80px 10%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .section-container {
+        padding: 60px 5%;
+    }
+    .reveal.fade-left, .reveal.fade-right {
+        transform: translateX(0) translateY(50px);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 40px 20px;
+    }
 }

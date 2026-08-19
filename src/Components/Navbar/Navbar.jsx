@@ -25,7 +25,7 @@ const Navbar = () => {
 
   const closeMenu = () => {
     if (menuRef.current) {
-      menuRef.current.style.right = "-350px";
+      menuRef.current.style.right = "-100%";
     }
     setMenuOpen(false);
     document.body.classList.remove("no-scroll");
