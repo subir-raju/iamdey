@@ -85,7 +85,9 @@
 
     .nav-mob-open {
         display: block;
-        width: 30px;
+        height: 24px;
+        width: auto;
+        padding: 5px;
     }
 
     .nav-menu {
